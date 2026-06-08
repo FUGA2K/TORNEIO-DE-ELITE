@@ -3,9 +3,7 @@ players:'https://docs.google.com/spreadsheets/d/e/2PACX-1vSajFUuPD1gvE4rmQO73dbr
 initial:'https://docs.google.com/spreadsheets/d/e/2PACX-1vSajFUuPD1gvE4rmQO73dbrbHIioG7_lBq3-kdSGH_jeq9awINtzQTV45-PPAuCtLJ7UUcmrd5JtNZm/pub?gid=2057139851&single=true&output=csv',
 final:'https://docs.google.com/spreadsheets/d/e/2PACX-1vSajFUuPD1gvE4rmQO73dbrbHIioG7_lBq3-kdSGH_jeq9awINtzQTV45-PPAuCtLJ7UUcmrd5JtNZm/pub?gid=1072372243&single=true&output=csv'
 };
-const target=new Date('2026-08-15T14:00:00');
-setInterval(()=>{let d=Math.floor((target-new Date())/86400000);
-document.getElementById('countdown').innerHTML='Faltam '+d+' dias';},1000);
+
 
 function csvTable(csv){
  const rows=csv.trim().split('\n').map(r=>r.split(','));
@@ -20,10 +18,14 @@ async function load(){
  const i=await fetch(SHEETS.initial).then(r=>r.text());
  const f=await fetch(SHEETS.final).then(r=>r.text());
 
- document.getElementById('playersData').innerHTML=csvTable(p);
- document.getElementById('initialData').innerHTML=csvTable(i);
- document.getElementById('finalData').innerHTML=csvTable(f);
+ const playersDiv = document.getElementById('playersData');
+const initialDiv = document.getElementById('initialData');
+const finalDiv = document.getElementById('finalData');
 
+if(playersDiv) playersDiv.innerHTML = csvTable(p);
+if(initialDiv) initialDiv.innerHTML = csvTable(i);
+if(finalDiv) finalDiv.innerHTML = csvTable(f);
+  
  const players=(p.trim().split('\n').length-1);
  const matches=(i.trim().split('\n').length-1);
  document.getElementById('stats').innerHTML=`<b>${players}</b> jogadores • <b>${matches}</b> jogos da fase inicial`;

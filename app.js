@@ -45,9 +45,9 @@ function updateDisplay() {
     const seconds = elapsedTime % 60;
 
     document.getElementById("timerDisplay").textContent =
-        String(minutes).padStart(2, "0") +
+        String(minutes).padStart(0, "0") +
         ":" +
-        String(seconds).padStart(2, "0");
+        String(seconds).padStart(0, "0");
 }
 
 function startTimer() {

@@ -3,7 +3,7 @@ players:'https://docs.google.com/spreadsheets/d/e/2PACX-1vSajFUuPD1gvE4rmQO73dbr
 initial:'https://docs.google.com/spreadsheets/d/e/2PACX-1vSajFUuPD1gvE4rmQO73dbrbHIioG7_lBq3-kdSGH_jeq9awINtzQTV45-PPAuCtLJ7UUcmrd5JtNZm/pub?gid=2057139851&single=true&output=csv',
 final:'https://docs.google.com/spreadsheets/d/e/2PACX-1vSajFUuPD1gvE4rmQO73dbrbHIioG7_lBq3-kdSGH_jeq9awINtzQTV45-PPAuCtLJ7UUcmrd5JtNZm/pub?gid=1072372243&single=true&output=csv'
 };
-const target=new Date('2026-08-08T14:00:00');
+const target=new Date('2026-08-15T14:00:00');
 setInterval(()=>{let d=Math.floor((target-new Date())/86400000);
 document.getElementById('countdown').innerHTML='Faltam '+d+' dias';},1000);
 

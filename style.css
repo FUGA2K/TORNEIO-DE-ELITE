@@ -42,8 +42,12 @@ body{
     padding:40px;
 }
 
-.logo{
-    width:120px;
+.hero .logo{
+    width:400px;
+    max-width:90%;
+    height:auto;
+    display:block;
+    margin:0 auto 20px auto;
 }
 
 .portal{

@@ -74,7 +74,33 @@ setInterval(() => {
 
 }, 1000);
 
+// =========================
+// LISTA DE JOGADORES
+// =========================
 
+let numeroAtual = "";
+let jogadorAtual = "";
+
+function adicionarResultado(){
+
+    const numero = prompt("Número sorteado:");
+
+    if(!numero) return;
+
+    const jogador = prompt("Jogador sorteado:");
+
+    if(!jogador) return;
+
+    const tabela =
+      document.querySelector("#resultadoTable tbody");
+
+    tabela.innerHTML += `
+      <tr>
+        <td>${numero}</td>
+        <td>${jogador}</td>
+      </tr>
+    `;
+}
 
 
 console.log("VERSAO NOVA DO APP.JS");

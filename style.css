@@ -9,15 +9,3 @@ th,td{border:1px solid #ddd;padding:8px}
 .bracket{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 .box{background:#225f37;padding:15px;border-radius:8px;text-align:center}
 .champion{font-weight:bold;font-size:1.2em}
-nav{
-    background:#06180d;
-    padding:10px;
-    text-align:center;
-}
-
-nav a{
-    color:#d4af37;
-    text-decoration:none;
-    margin:0 12px;
-    font-weight:bold;
-}

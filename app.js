@@ -72,12 +72,7 @@ setInterval(() => {
 
 }, 1000);
 
-#countdown{
-    font-size:28px;
-    font-weight:bold;
-    color:#d4af37;
-    margin-top:15px;
-}
+
 
 
 console.log("VERSAO NOVA DO APP.JS");

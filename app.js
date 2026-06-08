@@ -36,51 +36,40 @@ load();
 // CRONÓMETRO EASCC (CRESCENTE)
 // =========================
 
-let elapsedTime = 0;
-let timerInterval = null;
+const target = new Date('2026-08-08T14:00:00');
 
-function updateDisplay() {
+setInterval(() => {
 
-    const minutes = Math.floor(elapsedTime / 60);
-    const seconds = elapsedTime % 60;
+    const now = new Date();
 
-    document.getElementById("timerDisplay").textContent =
-        String(minutes).padStart(2, "0") +
-        ":" +
-        String(seconds).padStart(2, "0");
-}
+    const diff = target - now;
 
-function startTimer() {
+    if (diff <= 0) {
 
-    if (timerInterval) return;
+        document.getElementById('countdown').innerHTML =
+        "🎱 Torneio em curso!";
 
-    timerInterval = setInterval(() => {
+        return;
+    }
 
-        elapsedTime++;
+    const days =
+      Math.floor(diff / (1000 * 60 * 60 * 24));
 
-        updateDisplay();
+    const hours =
+      Math.floor((diff % (1000 * 60 * 60 * 24))
+      / (1000 * 60 * 60));
 
-    }, 1000);
-}
+    const minutes =
+      Math.floor((diff % (1000 * 60 * 60))
+      / (1000 * 60));
 
-function pauseTimer() {
+    const seconds =
+      Math.floor((diff % (1000 * 60))
+      / 1000);
 
-    clearInterval(timerInterval);
+    document.getElementById('countdown').innerHTML =
+      `⏳ ${days} dias ${hours}h ${minutes}m ${seconds}s`;
 
-    timerInterval = null;
-}
-
-function resetTimer() {
-
-    clearInterval(timerInterval);
-
-    timerInterval = null;
-
-    elapsedTime = 0;
-
-    updateDisplay();
-}
-
-updateDisplay();
+}, 1000);
 
 console.log("VERSAO NOVA DO APP.JS");

@@ -10,11 +10,20 @@ th,td{border:1px solid #ddd;padding:8px}
 .box{background:#225f37;padding:15px;border-radius:8px;text-align:center}
 .champion{font-weight:bold;font-size:1.2em}
 #timerDisplay{
-    font-size:60px;
-    text-align:center;
+    font-size:180px;
     font-weight:bold;
     color:#d4af37;
-    margin:20px 0;
+
+    background:#000;
+    border:5px solid #d4af37;
+    border-radius:25px;
+
+    padding:50px;
+
+    width:700px;
+    margin:auto;
+
+    text-align:center;
 }
 
 .timer-buttons{
@@ -88,6 +97,12 @@ body{
     border-radius:10px;
     font-weight:bold;
 }
+
+button{
+    font-size:30px;
+    padding:20px 40px;
+}
+
 #countdown{
     font-size:28px;
     font-weight:bold;

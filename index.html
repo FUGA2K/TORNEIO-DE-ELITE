@@ -1,72 +1,74 @@
-<!DOCTYPE html><html lang="pt"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EASCC Elite 2026</title><link rel="stylesheet" href="style.css"></head>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EASCC 2026</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-<header><img src="logo.png" class="logo"><h1>EASCC Snooker Championship 2026</h1>
-<div id="countdown"></div></header>
 
-<nav>
-<a href="#dashboard">Dashboard</a>
-<a href="#players">Jogadores</a>
-<a href="#initial">Fase Inicial</a>
-<a href="#final">Fase Final</a>
-<a href="#sorteio">🎲 Sorteio</a>  
-</nav>
+<header class="hero">
 
-<section id="dashboard" class="card">
-    <h2>Dashboard</h2>
-    <div id="stats"></div>
-    <div id="nextmatch"></div>
-</section>
-  
-<section id="cronometro" class="card">
-    <h2>⏱️ Cronómetro de Jogo</h2>
+<img src="logo.png" class="logo">
 
-    <div id="timerDisplay">00:00</div>
+<h1>EASCC Snooker Championship 2026</h1>
 
-    <div class="timer-buttons">
-        <button onclick="startTimer()">▶️ Start</button>
-        <button onclick="pauseTimer()">⏸️ Pause</button>
-        <button onclick="resetTimer()">🔄 Reset</button>
-    </div>
-</section>
-  
-<section id="sorteio" class="card">
-  <h2>🎲 Sorteio EASCC</h2>
+<div id="countdown"></div>
 
-  <iframe
-    src="https://spinthewheel.io/pt/wheels/BIfdDl3EB3wR57ELtPOdcz0xJmU9MQ=="
-    width="100%"
-    height="700"
-    style="border:none;border-radius:12px;">
-  </iframe>
+</header>
 
-  <br><br>
+<div class="portal">
 
-  <iframe
-    src="https://spinthewheel.io/pt/wheels/47OWxc87Cv2fgLTy7X3ccz0xJmU9MQ=="
-    width="100%"
-    height="700"
-    style="border:none;border-radius:12px;">
-  </iframe>
-</section>
+<a href="dashboard.html" class="portal-card">
+📊
+<h2>Dashboard</h2>
+</a>
 
-<section id="players" class="card"><h2>Jogadores / Sorteio</h2><div id="playersData"></div></section>
-<section id="initial" class="card"><h2>Fase Inicial</h2><div id="initialData"></div></section>
-<section id="final" class="card"><h2>Fase Final</h2><div id="finalData"></div></section>
+<a href="sorteio.html" class="portal-card">
+🎲
+<h2>Sorteio</h2>
+</a>
 
-<section class="card">
+<a href="jogadores.html" class="portal-card">
+👥
+<h2>Jogadores</h2>
+</a>
+
+<a href="fase-inicial.html" class="portal-card">
+🎱
+<h2>Fase Inicial</h2>
+</a>
+
+<a href="fase-final.html" class="portal-card">
+🏆
+<h2>Fase Final</h2>
+</a>
+
+<a href="bracket.html" class="portal-card">
+🥇
 <h2>Bracket</h2>
-<div class="bracket">
-<div class="box">Meia-final 1</div>
-<div class="box">Meia-final 2</div>
-<div class="box champion">Final BO3</div>
+</a>
+
+<a href="cronometro.html" class="portal-card">
+⏱️
+<h2>Cronómetro</h2>
+</a>
+
+<a href="galeria.html" class="portal-card">
+📸
+<h2>Galeria</h2>
+</a>
+
+<a href="halloffame.html" class="portal-card">
+⭐
+<h2>Hall Of Fame</h2>
+</a>
+
 </div>
-</section>
 
-<section class="card"><h2>Hall of Fame</h2><p>Preparado para futuras edições.</p></section>
-<section class="card"><h2>Galeria</h2><p>Adicionar fotografias do evento.</p></section>
+<script src="app.js"></script>
 
-<script src="app.js"></script></body></html>
-
-
+</body>
+</html>

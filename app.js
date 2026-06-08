@@ -82,3 +82,5 @@ function resetTimer() {
 }
 
 updateDisplay();
+
+console.log("VERSAO NOVA DO APP.JS");

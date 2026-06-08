@@ -32,18 +32,19 @@ async function load(){
 }
 load();
 
-// CRONÓMETRO EASCC
+// =========================
+// CRONÓMETRO EASCC (CRESCENTE)
+// =========================
 
-let duration = 20 * 60; // 20 minutos
-let timeLeft = duration;
+let elapsedTime = 0;
 let timerInterval = null;
 
 function updateDisplay() {
 
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
+    const minutes = Math.floor(elapsedTime / 60);
+    const seconds = elapsedTime % 60;
 
-    document.getElementById("timerDisplay").innerHTML =
+    document.getElementById("timerDisplay").textContent =
         String(minutes).padStart(2, "0") +
         ":" +
         String(seconds).padStart(2, "0");
@@ -55,20 +56,9 @@ function startTimer() {
 
     timerInterval = setInterval(() => {
 
-        if (timeLeft > 0) {
+        elapsedTime++;
 
-            timeLeft--;
-
-            updateDisplay();
-
-        } else {
-
-            clearInterval(timerInterval);
-            timerInterval = null;
-
-            alert("🎱 Tempo de jogo terminado!");
-
-        }
+        updateDisplay();
 
     }, 1000);
 }
@@ -86,7 +76,7 @@ function resetTimer() {
 
     timerInterval = null;
 
-    timeLeft = duration;
+    elapsedTime = 0;
 
     updateDisplay();
 }

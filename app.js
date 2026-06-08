@@ -31,3 +31,64 @@ async function load(){
  } catch(e){document.getElementById('stats').innerHTML='Erro ao carregar dados';}
 }
 load();
+
+// CRONÓMETRO EASCC
+
+let duration = 20 * 60; // 20 minutos
+let timeLeft = duration;
+let timerInterval = null;
+
+function updateDisplay() {
+
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+
+    document.getElementById("timerDisplay").innerHTML =
+        String(minutes).padStart(2, "0") +
+        ":" +
+        String(seconds).padStart(2, "0");
+}
+
+function startTimer() {
+
+    if (timerInterval) return;
+
+    timerInterval = setInterval(() => {
+
+        if (timeLeft > 0) {
+
+            timeLeft--;
+
+            updateDisplay();
+
+        } else {
+
+            clearInterval(timerInterval);
+            timerInterval = null;
+
+            alert("🎱 Tempo de jogo terminado!");
+
+        }
+
+    }, 1000);
+}
+
+function pauseTimer() {
+
+    clearInterval(timerInterval);
+
+    timerInterval = null;
+}
+
+function resetTimer() {
+
+    clearInterval(timerInterval);
+
+    timerInterval = null;
+
+    timeLeft = duration;
+
+    updateDisplay();
+}
+
+updateDisplay();

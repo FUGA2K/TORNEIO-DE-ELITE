@@ -84,3 +84,10 @@ body{
     border-radius:10px;
     font-weight:bold;
 }
+#countdown{
+    font-size:28px;
+    font-weight:bold;
+    color:#d4af37;
+    margin-top:15px;
+}
+

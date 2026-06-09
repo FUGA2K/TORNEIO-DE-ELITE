@@ -210,11 +210,11 @@ function adicionarResultado(){
 
     if(!tabela) return;
 
-    tabela.innerHTML += `
-    <tr>
-        <td>${numero}</td>
-        <td>${jogador}</td>
-    </tr>`;
+   tabela.innerHTML += `
+<tr>
+    <td>${jogador}</td>
+    <td>${numero}</td>
+</tr>`;
 }
 
 console.log("APP.JS OK");

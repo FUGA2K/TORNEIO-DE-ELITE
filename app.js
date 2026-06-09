@@ -195,26 +195,23 @@ updateDisplay();
 
 function adicionarResultado(){
 
-    const numero =
-    prompt("Número sorteado:");
-
-    if(!numero) return;
-
-    const jogador =
-    prompt("Jogador sorteado:");
+    const jogador = prompt("Jogador sorteado:");
 
     if(!jogador) return;
 
-    const tabela =
-    document.querySelector("#resultadoTable tbody");
+    const numero = prompt("Número sorteado:");
+
+    if(!numero) return;
+
+    const tabela = document.querySelector("#resultadoTable tbody");
 
     if(!tabela) return;
 
-   tabela.innerHTML += `
-<tr>
-    <td>${jogador}</td>
-    <td>${numero}</td>
-</tr>`;
+    tabela.innerHTML += `
+    <tr>
+        <td>${jogador}</td>
+        <td>${numero}</td>
+    </tr>`;
 }
 
 console.log("APP.JS OK");

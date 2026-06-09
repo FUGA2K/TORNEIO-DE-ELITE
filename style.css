@@ -293,3 +293,19 @@ iframe{
     background:#dc3545;
     color:white;
 }
+
+.resultado-card{
+    background:#225f37;
+    border-left:6px solid #d4af37;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:10px;
+    font-size:18px;
+}
+
+#campeaoDashboard{
+    text-align:center;
+    font-size:50px;
+    font-weight:bold;
+    color:gold;
+}

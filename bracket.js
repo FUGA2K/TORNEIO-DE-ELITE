@@ -3,26 +3,69 @@ const FINAL_URL =
 
 async function carregarBracket(){
 
-    const csv = await fetch(FINAL_URL).then(r=>r.text());
+    try{
 
-    const linhas = csv.trim().split('\n');
+        const csv =
+        await fetch(FINAL_URL).then(r=>r.text());
 
-    const mf1 = linhas[2].split(',');
-    const mf2 = linhas[3].split(',');
+        const linhas =
+        csv.trim().split('\n');
 
-    document.getElementById("mf1j1").textContent = mf1[1];
-    document.getElementById("mf1j2").textContent = mf1[2];
+        const mf1 =
+        linhas.find(l => l.includes('Meia-Final 1'));
 
-    document.getElementById("mf2j1").textContent = mf2[1];
-    document.getElementById("mf2j2").textContent = mf2[2];
+        const mf2 =
+        linhas.find(l => l.includes('Meia-Final 2'));
 
-    document.getElementById("finalj1").textContent = mf1[3];
-    document.getElementById("finalj2").textContent = mf2[3];
+        const final =
+        linhas.find(l => l.includes('GRANDE FINAL'));
 
-    const finalLinha = linhas[8].split(',');
+        if(mf1){
 
-    document.getElementById("campeao").textContent =
-        "👑 " + finalLinha[5];
+            const dados = mf1.split(',');
+
+            document.getElementById("mf1j1").textContent =
+            dados[1];
+
+            document.getElementById("mf1j2").textContent =
+            dados[2];
+
+            document.getElementById("finalj1").textContent =
+            dados[3];
+        }
+
+        if(mf2){
+
+            const dados = mf2.split(',');
+
+            document.getElementById("mf2j1").textContent =
+            dados[1];
+
+            document.getElementById("mf2j2").textContent =
+            dados[2];
+
+            document.getElementById("finalj2").textContent =
+            dados[3];
+        }
+
+        if(final){
+
+            const dados = final.split(',');
+
+            document.getElementById("campeao").textContent =
+            dados[dados.length-1];
+        }
+
+    }
+
+    catch(error){
+
+        console.log(error);
+
+    }
+
 }
 
 carregarBracket();
+
+setInterval(carregarBracket,30000);
